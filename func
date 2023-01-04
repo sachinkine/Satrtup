@@ -1,0 +1,90 @@
+#!/bin/bash
+
+echo please choose following options 
+echo 
+echo 'a = install mysql-server' 
+echo 'b = install python2'
+echo 'c = install curl'
+echo 'd = insatll htop' 
+echo 'e = install docker' 
+echo 'f = install golang' 
+echo 
+
+function a(){
+
+ssh test@192.168.122.70 "if [ -e /etc/om ]
+
+
+then 
+    echo "it is exist"
+
+else
+   sudo apt install mlocate
+
+fi"
+}
+
+function b(){
+
+ssh test@192.168.122.70 "if [ -e /etc/python2 ]
+
+then
+   echo "it is already exist"
+else
+   sudo apt install htop
+fi"
+}
+function c(){
+
+ssh test@192.168.122.70 "if [ -e /etc/curl ]
+
+then
+    echo "it is exist"
+
+else
+   sudo apt-get install curl
+
+fi"
+}
+
+function d(){
+
+ssh test@192.168.122.70 "if [ -e /etc/htop ]
+
+then 
+    echo "it is exist"
+
+else
+   sudo apt-get install htop
+fi"
+}
+
+function e(){
+
+ssh test@192.168.122.70 "if [ -e /etc/docker ]
+
+then 
+    echo "it is exist"
+
+else
+  sudo apt-get install docker
+fi"
+}
+
+function f(){
+
+ssh test@192.168.122.70 "if [ -e /etc/go ]
+
+then
+    echo "it is exist"
+
+else
+  sudo apt-get install go .19.4
+fi"
+
+}
+
+read choices
+$choices
+
+
